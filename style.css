@@ -2,4 +2,51 @@
 
 body {
   font-family: "muli", sans-serif;
+  display: grid;
+  grid-template: auto / 1fr;
+  justify-items: center;
+}
+
+h1 {
+  color: #5176a6;
+  place-self: center;
+}
+
+main {
+  display: flex;
+  width: 80%;
+  gap: 1%;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 80vh;
+  overflow: hidden;
+  flex: 0.5;
+}
+
+.panel img {
+  z-index: -1;
+  height: 100%;
+}
+
+.panel h3 {
+  position: absolute;
+  color: white;
+  top: 44%;
+  font-size: 3rem;
+  opacity: 0.9;
+  z-index: 1;
+  display: none;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  display: block;
 }
