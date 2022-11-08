@@ -26,7 +26,7 @@ main {
   height: 80vh;
   overflow: hidden;
   flex: 0.5;
-  transition: flex 0.35s ease-out;
+  transition: flex 1s ease-out;
 }
 
 .panel img {
@@ -38,10 +38,10 @@ main {
   position: absolute;
   color: white;
   top: 44%;
-  font-size: 3rem;
-  opacity: 0.9;
+  font-size: 0;
+  opacity: 0;
   z-index: 1;
-  display: none;
+  transition: opacity 0.3s ease-in 0.3s, font-size 0.5s ease-in-out 0.2s;
 }
 
 .panel.active {
@@ -49,5 +49,21 @@ main {
 }
 
 .panel.active h3 {
-  display: block;
+  opacity: 0.9;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    width: 95%;
+  }
+
+  .panel.active h3 {
+    font-size: 1.8rem;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
